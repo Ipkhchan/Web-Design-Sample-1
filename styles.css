@@ -1,0 +1,758 @@
+/*
+Author: Ivan Chan
+Email: ivan.chan@mail.mcgill.ca
+
+Thank you for viewing my work!
+*/
+
+/*
+INDEX
+- Infrastructure (grid, fonts, clearfixes, etc...)
+- Variables
+- Font Sizing
+- Row 0
+- Row 1
+- Row 2
+- Row 3
+- Row 4
+- Row 5
+- Row 6
+- Row 7
+- Pop-Ups
+- Media-Queries
+    - Small Screen
+    - Large Screen
+*/
+
+/*INFRASTRUCTURE*/
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+[class *="row"] {
+    display: flex;
+    margin: auto;
+    margin: 0 10%;
+}
+
+/*Clearfixes*/
+[class *="row"]::after {
+    display: block;
+    clear: both;
+    content: "";
+    content: none;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+    content: none;
+}
+
+
+* {
+    box-sizing: border-box;
+/*    border-style: solid;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*Defined an extra .col-4a class because most of the rows/elements on the page are in 3 columns. A width of 31.5% gives that perfect spacing in between the columns. Applying justify-content of space-between spaces them perfectly, instead of having to play around with margins and padding. */
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-4a {width: 31.5%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.col-plan {width: 30%;}
+
+/*Apply flex as a class on html elements*/
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/*VARIABLES*/
+/*variable to change accent color for whole page*/
+:root {
+    --accentColor: #F8E5D7;
+}
+
+/*FONT SIZES*/
+/*apply font classes (ex. .p1, .p2) to html elements*/
+h1 {
+    font-size: 120%;
+}
+
+h2 {
+    font-size: 70%;
+}
+
+h3 {
+    font-size: 50%;
+}
+
+h4 {
+    font-size: 50%;
+}
+
+.p1 {
+    font-size: 55%;
+}
+
+.p2 {
+    font-size: 50%;
+    line-height: 10px;
+}
+
+/*ROW 0- TOPNAV*/
+.row-0 {
+    padding: 0 10%;
+    margin: 0;
+    background-color: #222222;
+    position: relative;
+}
+
+.row-0 .topnav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.row-0 li {
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.row-0 a {
+    color: #ffffff;
+    font-size: 11px;
+    margin: 0 1vw;
+}
+
+.row-0 a:hover {
+    color: var(--accentColor);
+    font-weight: bold;
+}
+
+.row-0 .menuBar {
+    font-size: 15px;
+    display: none;
+}
+
+.row-0 input {
+    width: 25vw;
+    min-width: 100px;
+    max-width: 200px;
+    background-color: #333333;
+    color: #999999;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    padding-left: 10px;
+
+}
+
+.row-0 .searchBar {
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 10%;
+}
+
+.row-0 .searchIcon {
+    background-color: #444444;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+}
+
+.row-0 .searchIcon svg {
+    fill: #ffffff;
+    height: 17px;
+    width: auto;
+}
+
+.row-0 .searchIcon svg:hover {
+    fill: var(--accentColor);
+}
+
+
+/*ROW 1*/
+.row-1 {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 90px;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.circle {
+    height: 5vw;
+    width: 5vw;
+    min-height: 40px;
+    min-width: 40px;
+    position: absolute;
+    border-radius: 40px;
+    background: var(--accentColor);
+    z-index: -1;
+}
+
+/*ROW 2*/
+.row-2 {
+    justify-content: center;
+    border-top: 2px solid #F0F0F0;
+    border-bottom: 2px solid #F0F0F0;
+    margin-bottom: 20px;
+    padding: 8px 0;
+}
+
+.row-2 .middlenav {
+    list-style: none;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin: 0px;
+}
+
+.row-2 li {
+    display: flex;
+    align-items: center;
+}
+
+.row-2 a {
+    font-size: 11px;
+    margin: 0 7px;
+}
+
+.row-2 a:hover {
+    color: var(--accentColor);
+    font-weight: bold;
+}
+
+/*ROW 3*/
+.row-3 {
+    background-image: url(assets/flaunter-com-178022.jpg);
+    background-size: 100%;
+    background-position: 0% 50%;
+    padding: 0;
+    height: 40vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-3 .newsItem {
+    background-color: #F8E5D7;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.row-3 .newsItem >*{
+    text-align: center;
+    margin: 1vw;
+}
+
+.row-3 .newsItem h2 {
+/*    margin-bottom: 0;*/
+    width: 80%;
+}
+
+.row-3 .newsItem a{
+    font-size: 7px;
+    padding: 2px;
+}
+
+.row-3 .newsItem a:hover {
+    font-weight: bold;
+}
+
+/*ROW 4*/
+.row-4 {
+    justify-content: space-between;
+}
+
+.row-4 .col-4a {
+    padding-top: 31.5%;
+    background-size: 100% 100%;
+    margin: 3vw 0;
+}
+
+.row-4 .tile-1 {
+    background-image: url(assets/small_image_0013_annie-spratt-217517.jpg);
+}
+
+.row-4 .tile-2 {
+    background-image: url(assets/small_image_0012_anthony-tran-378336.jpg);
+}
+
+.row-4 .tile-3 {
+    background-image: url(assets/small_image_0011_brooke-lark-331981.jpg);
+}
+
+.row-4 .relative {
+    height: 0px;
+    width: 100%;
+    position: relative;
+}
+
+
+.row-4 .imageLabel {
+    position: absolute;
+    width: 80%;
+    top: -10px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8E5D7;
+}
+
+/*ROW 5*/
+.row-5 {
+    justify-content: space-between;
+}
+
+.row-5 .col-4a {
+    justify-content: space-between;
+}
+
+.row-5 .col-4a .tileImgBox {
+    width: 100%;
+    padding-top: 60%;
+    overflow: hidden;
+    position: relative
+}
+
+.row-5 img {
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.row-5 a{
+    font-size: 7px;
+    padding: 2px 2px 2px 0;
+
+}
+
+.row-5 a:hover {
+    font-weight: bold;
+}
+
+.row-5 [class*="tile"] {
+    padding: 0 0 10px 0;
+}
+
+/*TILE 10*/
+
+.row-5 .tile-10 {
+    background-color: var(--accentColor);
+    align-items: center;
+}
+
+.row-5 .profilePhoto {
+    width: 80%;
+    padding-top: 80%;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+}
+
+.row-5 .profilePhoto img {
+    width: 140%;
+    left: -15%;
+}
+
+.tile-10 p {
+    text-align: center;
+    line-height: 9px;
+    width: 90%;
+}
+
+.tile-10 .mediaIcons {
+    justify-content: center;
+}
+
+.tile-10 .mediaIcon {
+    text-decoration: none;
+    list-style: none;
+}
+
+.tile-10 .mediaIcon:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/*TILE 11*/
+.tile-11 input[type="text"] {
+    width: 100%;
+    background-color: #F4F4F4;
+    color: #A0A0A0;
+    text-align: center;
+    padding: 8px;
+    margin: 5px 0;
+    border: 0;
+}
+
+.tile-11 input[type="submit"] {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px;
+    margin: 5px 0;
+    border: 0;
+}
+
+input[type="submit"]:hover {
+    font-weight: bold;
+}
+
+/*TILE 12*/
+.row-5 .tile-12 {
+    background-image: url(assets/small_image_0009_joanna-kosinska-254405.jpg);
+    background-size: 100% 100%;
+    align-items: center;
+    justify-content: center;
+    height: 15vw;
+}
+
+.tile-12 * {
+    text-align: center;
+}
+
+.til-12 h3 {
+    font-weight: bold;
+}
+
+.tile-12 a {
+    border: #000000 solid 1px;
+}
+
+/*TILE 13*/
+.row-5 .tile-13 {
+    counter-reset: listCounter;
+    background-color: var(--accentColor);
+}
+
+.row-5 .tile-13 h4 {
+    text-align: center;
+}
+
+.row-5 .tile-13 p {
+    position: relative;
+    width: 70%;
+    left: 20%;
+    padding-right: 5px;
+}
+
+.row-5 .tile-13 p::before {
+    content: counter(listCounter);
+    counter-increment: listCounter;
+    font-size: 17px;
+    position: absolute;
+    top: 0;
+    left: -20%;
+    margin: 4px 0 0 0;
+}
+
+/*ROW 6*/
+.row-6 {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+
+.row-6 a {
+    height: 3vw;
+    width: 3vw;
+    min-height: 20px;
+    min-width: 20px;
+    max-height: 40px;
+    max-width: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #F4F4F4;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.row-6 a p {
+    font-size: 1.3vw;
+    margin: 0;
+}
+
+.row-6 a:hover {
+    font-weight: bold;
+    background-color: var(--accentColor);
+}
+
+.row-6 svg {
+    height: 1.5vw;
+    width: 1.5vw;
+}
+
+/*ROW 7*/
+.row-7 {
+    margin: 0;
+}
+
+.row-7 h3 {
+    text-align: center;
+    background-color: var(--accentColor);
+    margin: 0;
+    padding: 13px 0;
+}
+
+.row-7 .imageReel img {
+    width: 20%;
+    height: 20%;
+}
+
+.row-7 .footer {
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #000000;
+}
+
+.row-7 .footer p {
+    color: #ffffff;
+}
+
+.row-7 .footerLinks {
+    align-items: center;
+    justify-content: center;
+    border-color: white;
+}
+
+.row-7 a {
+    margin: 0 5px;
+    color: #ffffff;
+}
+
+.row-7 .mediaIcons {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.row-7 .mediaIcon {
+    color: #ffffff;
+}
+
+.row-7 .mediaIcon:hover {
+    color: var(--accentColor);
+    cursor: pointer;
+}
+
+/*POPUPS*/
+.subscribedPopup {
+    position: fixed;
+    background-color: var(--accentColor);
+    width: 50%;
+    height: 20%;
+    top: 50%;
+    left: 25%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribedPopup p{
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.subscribedPopup .closeElement {
+    position: absolute;
+    padding: 3px;
+    margin: 0;
+    top: 0%;
+    right:0%;
+}
+
+.subscribedPopup .closeElement:hover {
+    font-weight: bold;
+}
+
+.active {
+    display: flex;
+
+
+}
+
+/*MEDIA QUERIES*/
+
+/*TOPNAV*/
+@media screen and (max-width: 380px) {
+
+    .row-0 .topnav li:not(:nth-child(1)) {
+        display: none;
+    }
+
+   .row-0 .menuBar {
+        display: block;
+    }
+
+    .row-0 .active {
+        flex-direction: column;
+    }
+
+    .row-0 .active li:not(:nth-child(1)) {
+        display: block;
+    }
+
+}
+
+/*SMALL SCREEN*/
+@media screen and (max-width: 450px) {
+
+/*ROW 3*/
+    .row-3 {
+        height: 50vw;
+    }
+
+
+/*ROW 4*/
+    .row-4 h3 {
+        font-size: 50%;
+    }
+
+/*ROW 5*/
+    .row-5 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row-5 .col-4a {
+        width: 100%;
+    }
+
+    [class*="tile"] {
+        margin: 3vw 0;
+    }
+    .row-5 p {
+        line-height: 15px;
+    }
+
+    .row-5 .tile-12 {
+        height: 50vw;
+    }
+
+/*ROW 6 */
+    .row-6 a p {
+        font-size: 8px;
+    }
+
+    .row-6 svg {
+        height: 10px;
+        width: 10px;
+    }
+
+/*ROW 7    */
+    .row-7 .footer {
+        flex-direction: column;
+}
+
+    .row-7 .footer >* {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+
+
+/*FONT SIZES*/
+    h2 {
+        font-size: 50%;
+    }
+
+    h3 {
+        font-size: 75%;
+    }
+
+    h4 {
+        font-size:70%;
+    }
+
+    .p2 {
+        font-size:
+        60%;
+
+    }
+}
+
+/*LARGE SCREEN*/
+@media screen and (min-width: 800px) {
+
+/*ROW 3*/
+    .row-3 .newsItem {
+        height: 30%;
+    }
+
+/*ROW 4*/
+    .row-4 .imageLabel {
+        height: 30px;
+        top: -20px;
+    }
+
+/*ROW 5*/
+    .row-5 p {
+        line-height: 15px;
+    }
+
+/*FONT SIZES    */
+    h1 {
+        font-size: 2.5vw;
+    }
+
+    h2 {
+        font-size: 90%;
+    }
+
+    h3 {
+        font-size: 75%;
+    }
+
+    h4 {
+        font-size: 80%;
+    }
+
+    .p1 {
+        font-size: 70%;
+    }
+
+    .p2 {
+        font-size: 70%;
+    }
+}

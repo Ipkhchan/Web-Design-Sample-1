@@ -281,8 +281,9 @@ h4 {
 }
 
 .row-3 .newsItem a{
-    font-size: 7px;
+    font-size: 9px;
     padding: 2px;
+    font-weight: bold;
 }
 
 .row-3 .newsItem a:hover {
@@ -356,7 +357,7 @@ h4 {
 }
 
 .row-5 a{
-    font-size: 7px;
+    font-size: 9px;
     padding: 2px 2px 2px 0;
 
 }
@@ -754,5 +755,13 @@ input[type="submit"]:hover {
 
     .p2 {
         font-size: 70%;
+    }
+
+    .row-3 .newsItem a {
+      font-size: 12px;
+    }
+
+    .row-5 a {
+      font-size: 12px;
     }
 }
